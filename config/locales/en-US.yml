@@ -1,2 +1,9 @@
 en-US:
-  comparable_container: Enable product comparison
+  compare_products:
+    comparable_container: Enable product comparison
+    compare: Compare
+    compare_selected: Compare selected products
+    insufficient_data: Insufficient data. You need to select at least 2 products.
+    invalid_taxon: Invalid taxon
+    product_comparison: Product comparison
+    taxon_not_comparable: "Products inside this taxon can't be compared"

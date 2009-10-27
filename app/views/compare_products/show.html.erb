@@ -1,0 +1,18 @@
+<h1><%= t('compare_products.product_comparison') %></h1>
+
+<table>
+  <% comparison_rows_for(@products, @properties).each do |row| -%>
+  <tr>
+    <th><%= row.shift -%></th>
+    <% row.each do |field| -%>
+    <td><%= field || "&mdash;" %></td>
+    <% end -%>
+  </tr>
+  <% end -%>
+</table>
+
+<%= link_to t('continue_shopping'), seo_url(@taxon) %>
+
+<% content_for :sidebar do %>
+  <%= render :partial => "shared/taxonomies" %>
+<% end %>
