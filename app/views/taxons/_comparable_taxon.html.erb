@@ -1,4 +1,5 @@
 <% form_tag(compare_products_path, :method => :get) do -%>
+  <div class="flash notice"><%= t('compare_products.info') %></div>
   <%= hidden_field_tag('taxon', params[:id].join('/')) %>
   <%= render "shared/products.html.erb", :products => @products, :taxon => @taxon, :compare => true %>
   <%= submit_tag t('compare_products.compare_selected') %>

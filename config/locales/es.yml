@@ -3,6 +3,7 @@ es:
     comparable_container: Habilitar comparación de productos
     compare: Comparar
     compare_selected: Comparar los productos seleccionados
+    info: <strong>Aviso:</strong> Aquí puedes comparar hasta 4 productos.
     insufficient_data: Datos insuficientes. Debe seleccionar al menos 2 products.
     invalid_taxon: Taxón no válido
     product_comparison: Comparación de productos

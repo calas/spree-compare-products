@@ -3,6 +3,7 @@ en-US:
     comparable_container: Enable product comparison
     compare: Compare
     compare_selected: Compare selected products
+    info: <strong>Tip:</strong> You can compare up to 4 products here.
     insufficient_data: Insufficient data. You need to select at least 2 products.
     invalid_taxon: Invalid taxon
     product_comparison: Product comparison
