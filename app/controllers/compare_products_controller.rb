@@ -14,7 +14,13 @@ class CompareProductsController < Spree::BaseController
 
   # Find the taxon from the url
   def find_taxon
-    @taxon = Taxon.find_by_permalink("#{params[:taxon_path].join('/')}/")
+    permalink = ""
+    if params[:taxon_path]
+      permalink = "#{params[:taxon_path].join('/')}/"
+    elsif params[:taxon]
+      permalink = "#{params[:taxon]}/"
+    end
+    @taxon = Taxon.find_by_permalink(permalink) unless permalink.blank?
     if @taxon.nil?
       flash[:error] = I18n.t('compare_products.invalid_taxon')
       redirect_to products_path
@@ -33,7 +39,7 @@ class CompareProductsController < Spree::BaseController
   # the url will silently be ignored if they can't be compared inside
   # the taxon or don't exists.
   def find_products
-    @products = @taxon.products.find(:all, :conditions => { :id => params[:product_ids]},
+    @products = @taxon.products.find(:all, :conditions => { :id => params[:product_id]},
                                      :include => { :product_properties => :property },
                                      :limit => 4)
     if @products.length < 2
