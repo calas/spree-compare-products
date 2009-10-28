@@ -9,12 +9,9 @@ Provides product comparison with other products with the same taxon.
 * Only allows products comparison in comparable taxonomies
 * Only compares products in the same exact taxon
 * Compares up to 4 products
-* Should redirect to the product's taxon page if only one product is provided
-* Should not rely on javascript
-
-### TODO
-
-* Should use javascript (if available) to:
-  * Alert when more than 4 products are selected
-  * Alert when just 1 product submitted
+* Redirects to the product's taxon page if only one product is provided
+* Doesn't rely on javascript
+* Use javascript (if available) to:
+  * Disabling checkboxes when 4 products are selected
+  * Disabling submit button when less than 2 products are selected
   * Submit to the correct URL (to avoid server-side redirection)
