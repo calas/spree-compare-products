@@ -16,3 +16,7 @@
 <% content_for :sidebar do %>
   <%= render :partial => "shared/taxonomies" %>
 <% end %>
+
+<% content_for :head do -%>
+  <%= stylesheet_link_tag 'compiled/compare_products' %>
+<% end -%>

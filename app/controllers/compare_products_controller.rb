@@ -1,3 +1,4 @@
+# -*- coding: undecided -*-
 class CompareProductsController < Spree::BaseController
   before_filter :find_taxon
   before_filter :verify_comparable_taxonomy
@@ -39,12 +40,16 @@ class CompareProductsController < Spree::BaseController
   # the url will silently be ignored if they can't be compared inside
   # the taxon or don't exists.
   def find_products
-    @products = @taxon.products.find(:all, :conditions => { :id => params[:product_id]},
-                                     :include => { :product_properties => :property },
-                                     :limit => 4)
-    if @products.length < 2
+    product_ids = params[:product_id] || []
+    if product_ids.length > 4
+      flash[:notice] = I18n.t('compare_products.limit_is_4')
+      product_ids = product_ids[0..3]
+    elsif product_ids.length < 2
       flash[:error] = I18n.t('compare_products.insufficient_data')
       redirect_to "/t/#{@taxon.permalink}"
     end
+    @products = @taxon.products.find(:all, :conditions => { :id => product_ids},
+                                     :include => { :product_properties => :property },
+                                     :limit => 4)
   end
 end

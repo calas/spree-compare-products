@@ -2,7 +2,6 @@ function disableIf(query, value){ $(query).attr('disabled', value); }
 
 function countChecked() { 
     var checkedProducts = $(':checkbox.compare:checked').length;
-    disableIf(':checkbox.compare:unchecked', (checkedProducts >= 4));
     disableIf("form[action*='/compare_products'] :submit", (checkedProducts < 2));
 }
 

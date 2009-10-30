@@ -1,7 +1,7 @@
 <h1><%= @taxon.name %></h1>
 
 <% if @taxon.children.empty? %>
-  <% if @taxon.taxonomy.comparable? -%>
+  <% if @taxon.taxonomy.comparable? && @products.length > 1 -%>
     <%= render 'comparable_taxon' %>
   <% else -%>
     <%= render "shared/products.html.erb", :products => @products, :taxon => @taxon  %>
@@ -12,5 +12,5 @@
 <% end %>
 
 <% content_for :sidebar do %>
-	<%= render :partial => "shared/taxonomies" %>
+  <%= render :partial => "shared/taxonomies" %>
 <% end %>

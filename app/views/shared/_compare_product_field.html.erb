@@ -1,2 +1,4 @@
-<%= check_box_tag('product_id[]', product.id, false, :id => "compare_product_#{product.id}", :class => "compare") %>
-<%= label_tag("compare_product_#{product.id}", t('compare_products.compare')) %>
+<span class="comparable">
+  <%= check_box_tag('product_id[]', product.id, false, :id => "compare_product_#{product.id}", :class => "compare") %>
+  <%= submit_tag t('compare_products.compare'), :class => "compare-button" %>
+</span>
