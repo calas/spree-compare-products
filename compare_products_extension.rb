@@ -11,5 +11,13 @@ class CompareProductsExtension < Spree::Extension
     Taxonomy.class_eval do
       include ComparableContainer
     end
+
+    Taxon.class_eval do
+      include ComparableContainer
+
+      def is_comparable?
+        comparable? || taxonomy.comparable?
+      end
+    end
   end
 end

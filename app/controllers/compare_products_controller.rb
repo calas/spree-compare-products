@@ -1,7 +1,7 @@
-# -*- coding: undecided -*-
+# -*- coding: utf-8 -*-
 class CompareProductsController < Spree::BaseController
   before_filter :find_taxon
-  before_filter :verify_comparable_taxonomy
+  before_filter :verify_comparable_taxon
   before_filter :find_products
 
   helper :products, :taxons
@@ -29,8 +29,8 @@ class CompareProductsController < Spree::BaseController
   end
 
   # Verifies that the comparison can be made inside this taxon.
-  def verify_comparable_taxonomy
-    if !@taxon.taxonomy.comparable?
+  def verify_comparable_taxon
+    unless @taxon.is_comparable?
       flash[:error] = I18n.t('compare_products.taxon_not_comparable')
       redirect_to "/t/#{@taxon.permalink}"
     end
