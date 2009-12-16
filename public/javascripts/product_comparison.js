@@ -7,11 +7,12 @@ function countChecked() {
 
 function directSubmit() {
     var product_id = $.map($(':checkbox.compare:checked'), function(n) {return n.value;}).join('/');
-    window.location = '/t/' + $('#taxon')[0].value + '/compare/' + product_id;
+    d = $.map($(':checkbox.compare:checked'), function(n) {return n.value;}).join('/');
+    window.location = '/t/' + $('#taxon_permalink')[0].value + '/compare/' + product_id;
     return false;
 };
 
-$(function(){
+$(document).ready(function(){
       countChecked();
       $(":checkbox").click(countChecked);
       $("form[action*='/compare_products']").submit(directSubmit);

@@ -1,9 +1,9 @@
 <% content_for :head do -%>
   <%= javascript_include_tag 'product_comparison' %>
-  <%= stylesheet_link_tag 'compiled/compare_products' %>
+  <%= stylesheet_link_tag 'compare_products' %>
 <% end -%>
 
 <% form_tag(compare_products_path, :method => :get) do -%>
-  <%= hidden_field_tag('taxon', params[:id].join('/')) %>
+  <%= hidden_field_tag('taxon_permalink', params[:id].join('/')) %>
   <%= render "shared/products.html.erb", :products => @products, :taxon => @taxon, :compare => true %>
 <% end -%>
