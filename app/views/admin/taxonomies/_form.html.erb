@@ -1,9 +1,0 @@
-<% f.field_container :name do %>
-  <%= f.label :name, t("name") %><br />
-  <%= error_message_on :taxonomy, :name %>
-  <%= text_field :taxonomy, :name  %>
-<% end %>
-<% f.field_container :comparable do %>
-  <%= check_box :taxonomy, :comparable  %>
-  <%= f.label :comparable, t("compare_products.comparable_container") %>
-<% end %>

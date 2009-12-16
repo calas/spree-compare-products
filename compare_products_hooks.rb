@@ -8,4 +8,6 @@ class CompareProductsHooks < Spree::ThemeSupport::HookListener
     end
   end
   
+  insert_after :admin_inside_taxonomy_form, 'admin/taxonomies/comparable_field'
+
 end
