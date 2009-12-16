@@ -2,11 +2,7 @@
 <h3><%= t(:search_results, :keywords => params[:keywords]) %></h3>
 <% end %>
 <ul class="product-listing">
-  <% column_count = 0 %>
   <% products.each do |product| %>
-  <% column_count += 1
-  column_count = 1 if column_count == 7
-   %>
     <% if Spree::Config[:show_zero_stock_products] || product.has_stock? %>
       <li id="product_<%= product.id %>">
         <%= link_to small_image(product), product %>
