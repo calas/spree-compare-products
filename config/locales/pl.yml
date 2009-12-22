@@ -1,10 +1,11 @@
-pl:
-  compare_products:
-    comparable_container: Włącz porównywanie produktów
+--- 
+pl: 
+  compare_products: 
+    comparable_container: "Włącz porównywanie produktów"
     compare: Porównaj
-    compare_selected: Porównaj zaznaczone produkty
-    insufficient_data: Brak wystarczających danych. Zaznacz co najmniej 2 produkty.
-    invalid_taxon: Niepoprawna kategoria
-    limit_is_4: Możesz porównać maksymalnie 4 produkty.
-    product_comparison: Porównanie produktów.
+    compare_selected: "Porównaj zaznaczone produkty"
+    insufficient_data: "Brak wystarczających danych. Zaznacz co najmniej 2 produkty."
+    invalid_taxon: "Niepoprawna kategoria"
+    limit_is_4: "Możesz porównać maksymalnie 4 produkty."
+    product_comparison: "Porównanie produktów."
     taxon_not_comparable: "Produty w tej kategorii nie mogą zostać porównane"
